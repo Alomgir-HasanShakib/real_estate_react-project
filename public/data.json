@@ -1,0 +1,107 @@
+[
+  {
+    "type": "Hotel",
+    "name": "Sunset Grand Hotel",
+    "location": "Miami, USA",
+    "rooms_available": 150,
+    "amenities": ["Free Wi-Fi", "Parking", "Restaurant", "Swimming Pool"],
+    "rating": 4.3,
+    "price_range": "$300-$700",
+    "contact": {
+      "phone": "+1 (123) 456-7890",
+      "email": "info@sunsetgrandhotel.com",
+      "website": "www.sunsetgrandhotel.com"
+    },
+    "image": "https://google.com"
+  },
+  {
+    "type": "Motel",
+    "name": "Sunrise Motel",
+    "location": "Austin, USA",
+    "rooms_available": 50,
+    "amenities": ["Free Parking", "AC", "Cable TV"],
+    "rating": 3.8,
+    "price_range": "$900-$2100",
+    "contact": {
+      "phone": "+1 (123) 555-6789",
+      "email": "info@sunrisemotel.com",
+      "website": "www.sunrisemotel.com"
+    },
+    "image": "https://google.com"
+  },
+  {
+    "type": "Resort",
+    "name": "Tropical Paradise Resort",
+    "location": "Bali, Indonesia",
+    "rooms_available": 300,
+    "amenities": [
+      "Private Beach",
+      "Infinity Pool",
+      "Spa",
+      "Multiple Restaurants"
+    ],
+    "rating": 4.8,
+    "price_range": "$250-$700",
+    "contact": {
+      "phone": "+62 812-3456-7890",
+      "email": "info@tropicalparadiseresort.com",
+      "website": "www.tropicalparadiseresort.com"
+    },
+    "image": "https://img.freepik.com/free-photo/umbrella-chair-around-beautiful-luxury-outdoor-swimming-pool-with-sea-ocean-view-hotel-resort-holiday-vacation-travel_74190-8958.jpg?w=1380"
+  },
+  {
+    "type": "Vacation Rental",
+    "name": "Cozy Beach House",
+    "location": "Malibu, USA",
+    "properties_available": 5,
+    "amenities": ["Ocean View", "Private Deck", "Fully Equipped Kitchen"],
+    "rating": 4.9,
+    "price_range": "$350 - $5000",
+    "contact": {
+      "phone": "+1 (123) 222-3333",
+      "email": "info@cozybeachhouse.com",
+      "website": "www.cozybeachhouse.com"
+    },
+    "image": "https://img.freepik.com/free-photo/beautiful-sea-landscape-with-beach-chairs_23-2148509232.jpg?w=1380"
+  },
+  {
+    "type": "Lodge",
+    "name": "Mountain Serenity Lodge",
+    "location": "Rocky Mountains, USA",
+    "rooms_available": 15,
+    "amenities": [
+      "Hiking Trails",
+      "Campfire Area",
+      "Restaurant",
+      "Scenic Views"
+    ],
+    "rating": 4.5,
+    "price_range": "$1000 - $6000",
+    "contact": {
+      "phone": "+1 (555) 123-4567",
+      "email": "reservations@mountainserenitylodge.com",
+      "website": "www.mountainserenitylodge.com"
+    },
+    "image": "https://thumbs.wbm.im/pw/medium/2252dee2f1efd7848ce30a3f40750146.avif"
+  },
+  {
+    "type": "Guesthouse",
+    "name": "Sunset View Guesthouse",
+    "location": "Coastal Town, Country",
+    "rooms_available": 10,
+    "amenities": [
+      "Complimentary Breakfast",
+      "Free Wi-Fi",
+      "Garden Area",
+      "Ocean Views"
+    ],
+    "rating": 4.8,
+    "price_range": "$1250 - $2200",
+    "contact": {
+      "phone": "+1 (555) 987-6543",
+      "email": "info@sunsetviewguesthouse.com",
+      "website": "www.sunsetviewguesthouse.com"
+    },
+    "image": "https://thumbs.wbm.im/pw/medium/ae9d616c596d1b3656a610ddbdc94116.avif"
+  }
+]
