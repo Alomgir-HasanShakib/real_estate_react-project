@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Contexts/Authentication/Authentication";
+import Logo from "../assets/logo.png";
 
 const Navbar = () => {
+  const { user, logOut, loader } = useContext(AuthContext);
+
   const navLink = (
     <>
       <li className="text-[18px] font-semibold">
@@ -67,40 +72,51 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
-      <li className="text-[18px] font-semibold">
-        <NavLink
-          to="/profile-up"
-          style={({ isActive, isPending, isTransitioning }) => {
-            return {
-              fontWeight: isActive ? "bold" : "",
-              color: isActive ? "#135D66" : "black",
-              background: isActive ? "transparent" : "",
-              borderBottom: isActive ? "1px solid #135D66" : "",
-              viewTransitionName: isTransitioning ? "slide" : "",
-            };
-          }}
-        >
-          Update Profile
-        </NavLink>
-      </li>
-      <li className="text-[18px] font-semibold">
-        <NavLink
-          to="/user-profile"
-          style={({ isActive, isPending, isTransitioning }) => {
-            return {
-              fontWeight: isActive ? "bold" : "",
-              color: isActive ? "#135D66" : "black",
-              background: isActive ? "transparent" : "",
-              borderBottom: isActive ? "1px solid #135D66" : "",
-              viewTransitionName: isTransitioning ? "slide" : "",
-            };
-          }}
-        >
-          User Profile
-        </NavLink>
-      </li>
+      {user && (
+        <li className="text-[18px] font-semibold">
+          <NavLink
+            to="/profile-up"
+            style={({ isActive, isPending, isTransitioning }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "#135D66" : "black",
+                background: isActive ? "transparent" : "",
+                borderBottom: isActive ? "1px solid #135D66" : "",
+                viewTransitionName: isTransitioning ? "slide" : "",
+              };
+            }}
+          >
+            Update Profile
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li className="text-[18px] font-semibold">
+          <NavLink
+            to="/user-profile"
+            style={({ isActive, isPending, isTransitioning }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "#135D66" : "black",
+                background: isActive ? "transparent" : "",
+                borderBottom: isActive ? "1px solid #135D66" : "",
+                viewTransitionName: isTransitioning ? "slide" : "",
+              };
+            }}
+          >
+            User Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
+  if (loader) {
+    return (
+      <div className="flex justify-center">
+        <span className="loading  loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
 
   return (
     <div className="navbar bg-base-100">
@@ -129,23 +145,35 @@ const Navbar = () => {
             {navLink}
           </ul>
         </div>
-        <a className="font-bold text-2xl text-[#135D66]">daisyUI</a>
+        <a className="font-bold text-2x">
+          <img className ='w-[150px]' src={Logo} alt="" />
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLink}</ul>
       </div>
-      <div className="navbar-end">
-        <div className="avatar mr-4">
-          <div className="w-12 rounded-full">
-            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+      {user ? (
+        <div className="navbar-end">
+          <div className="avatar mr-4">
+            <div className="w-12 rounded-full">
+              <img src={user.photoURL} />
+            </div>
           </div>
+          <button onClick={logOut}>
+            <a className="btn bg-darker text-white font-bold hover:bg-transparent hover:border-[#135D66] hover:text-[#135D66] px-8">
+              Log out
+            </a>
+          </button>
         </div>
-        <Link to="/login">
-          <a className="btn bg-darker text-white font-bold hover:bg-transparent hover:border-[#135D66] hover:text-[#135D66] px-8">
-            Log In
-          </a>
-        </Link>
-      </div>
+      ) : (
+        <div className="navbar-end">
+          <Link to="/login">
+            <a className="btn bg-darker text-white font-bold hover:bg-transparent hover:border-[#135D66] hover:text-[#135D66] px-8">
+              Log In
+            </a>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

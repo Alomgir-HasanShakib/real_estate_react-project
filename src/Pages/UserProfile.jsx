@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const UserProfile = () => {
   return (
-    <div>UserProfile</div>
-  )
-}
+    <div>
+      <Helmet>
+        <title>UserProfile</title>
+      </Helmet>
+    </div>
+  );
+};
 
-export default UserProfile
+export default UserProfile;

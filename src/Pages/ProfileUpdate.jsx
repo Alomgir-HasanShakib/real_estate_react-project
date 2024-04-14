@@ -1,8 +1,11 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const ProfileUpdate = () => {
   return (
-    <div>ProfileUpdate</div>
+    <div>
+      <Helmet><title>ProfileUpdate</title></Helmet>
+    </div>
   )
 }
 

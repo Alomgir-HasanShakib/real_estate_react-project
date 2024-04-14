@@ -8,9 +8,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
   return (
-    <Swiper
+  <div>
+    <Helmet><title>Home</title></Helmet>
+      <Swiper
       modules={[Navigation]}
       spaceBetween={50}
       slidesPerView={1}
@@ -30,7 +33,9 @@ const Home = () => {
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
       <SwiperSlide>Slide 4</SwiperSlide>
+      
     </Swiper>
+  </div>
   );
 };
 

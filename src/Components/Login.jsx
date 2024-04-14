@@ -1,16 +1,38 @@
-import  { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SocialLogin from "./SocialLogin";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../Contexts/Authentication/Authentication";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-    const [showpass, setshowPass] = useState(true);
+  const [showpass, setshowPass] = useState(true);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  // context for authentication
+  const { loginUser } = useContext(AuthContext);
+
+  const handleLogin = (data) => {
+    const { email, password } = data;
+    loginUser(email, password)
+      .then((result) => console.log(result.user))
+      .catch((err) => console.error(err));
+  };
+
   return (
-    <div className="max-w-screen-sm bg-lighten p-16 mx-auto mt-24 rounded-md">
-      <h1 className="text-center text-3xl mb-8 font-semibold text-primary">
+    <div className="max-w-screen-sm bg-lighten p-4 md:p-16 mx-auto mt-24 rounded-md">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
+      <h1 className="text-center text-2xl md:text-3xl mb-8 font-semibold text-primary">
         Log In Now
       </h1>
-      <form className="space-y-2">
-        
+      <form className="space-y-2" onSubmit={handleSubmit(handleLogin)}>
         <label className="input input-bordered flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,8 +43,16 @@ const Login = () => {
             <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
             <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
           </svg>
-          <input type="text" className="grow" placeholder="Email" />
+          <input
+            type="text"
+            className="grow"
+            placeholder="Email"
+            {...register("email", { required: true })}
+          />
         </label>
+        {errors.email && (
+          <span className="text-red-600">This field is required</span>
+        )}
 
         <label className="input input-bordered flex items-center gap-2">
           <svg
@@ -41,12 +71,20 @@ const Login = () => {
             type={!showpass ? "text" : "password"}
             className="grow"
             placeholder="Password"
+            {...register("password", { required: true })}
           />
           <span onClick={() => setshowPass(!showpass)}>
             {!showpass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
           </span>
         </label>
-        <input type="submit" value="Log In" className="btn w-full bg-primary text-white hover:bg-transparent hover:border-primary hover:text-primary" />
+        {errors.password && (
+          <span className="text-red-600">This field is required</span>
+        )}
+        <input
+          type="submit"
+          value="Log In"
+          className="btn w-full bg-primary text-white hover:bg-transparent hover:border-primary hover:text-primary"
+        />
       </form>
       <p className="text-darker mt-6 text-center">
         New Here? Please{" "}
@@ -54,6 +92,7 @@ const Login = () => {
           Register
         </Link>
       </p>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
