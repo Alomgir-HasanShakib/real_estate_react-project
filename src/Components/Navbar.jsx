@@ -11,7 +11,7 @@ const Navbar = () => {
               fontWeight: isActive ? "bold" : "",
               color: isActive ? "#135D66" : "black",
               background: isActive ? "transparent" : "",
-              border: isActive ? "1px solid #135D66" : "",
+              borderBottom: isActive ? "1px solid #135D66" : "",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
@@ -27,12 +27,28 @@ const Navbar = () => {
               fontWeight: isActive ? "bold" : "",
               color: isActive ? "#135D66" : "black",
               background: isActive ? "transparent" : "",
-              border: isActive ? "1px solid #135D66" : "",
+              borderBottom: isActive ? "1px solid #135D66" : "",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
         >
           About
+        </NavLink>
+      </li>
+      <li className="text-[18px] font-semibold">
+        <NavLink
+          to="/pricing"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#135D66" : "black",
+              background: isActive ? "transparent" : "",
+              borderBottom: isActive ? "1px solid #135D66" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Pricing
         </NavLink>
       </li>
       <li className="text-[18px] font-semibold">
@@ -43,7 +59,7 @@ const Navbar = () => {
               fontWeight: isActive ? "bold" : "",
               color: isActive ? "#135D66" : "black",
               background: isActive ? "transparent" : "",
-              border: isActive ? "1px solid #135D66" : "",
+              borderBottom: isActive ? "1px solid #135D66" : "",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
@@ -59,12 +75,28 @@ const Navbar = () => {
               fontWeight: isActive ? "bold" : "",
               color: isActive ? "#135D66" : "black",
               background: isActive ? "transparent" : "",
-              border: isActive ? "1px solid #135D66" : "",
+              borderBottom: isActive ? "1px solid #135D66" : "",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
         >
           Update Profile
+        </NavLink>
+      </li>
+      <li className="text-[18px] font-semibold">
+        <NavLink
+          to="/user-profile"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#135D66" : "black",
+              background: isActive ? "transparent" : "",
+              borderBottom: isActive ? "1px solid #135D66" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          User Profile
         </NavLink>
       </li>
     </>
@@ -108,9 +140,11 @@ const Navbar = () => {
             <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
           </div>
         </div>
-        <Link to='/signup'><a className="btn bg-darker text-white font-bold hover:bg-transparent hover:border-[#135D66] hover:text-[#135D66] px-8">
-          Log In
-        </a></Link>
+        <Link to="/login">
+          <a className="btn bg-darker text-white font-bold hover:bg-transparent hover:border-[#135D66] hover:text-[#135D66] px-8">
+            Log In
+          </a>
+        </Link>
       </div>
     </div>
   );

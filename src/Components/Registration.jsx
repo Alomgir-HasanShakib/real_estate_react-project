@@ -4,19 +4,16 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Contexts/Authentication/Authentication";
 
 const Registration = () => {
-    const [showpass, setshowPass] = useState(true);
+  const [showpass, setshowPass] = useState(true);
 
+  const handleSignUp = (e) => {
+    e.preventDefault();
 
+    const { createUser } = useContext(AuthContext);
 
-    const handleSignUp =(e)=>{
-        e.preventDefault()
-
-        const {createUser} = useContext(AuthContext)
-
-    } 
-
-
-
+    const email = e.target.email.value;
+    const pass = e.target.pass.value;
+  };
 
   return (
     <div>
@@ -65,15 +62,27 @@ const Registration = () => {
                 //   clipRule="evenodd"
               />
             </svg>
-            <input type={!showpass ? "text" : "password"} className="grow" placeholder="Password" />
+            <input
+              type={!showpass ? "text" : "password"}
+              className="grow"
+              placeholder="Password"
+            />
             <span onClick={() => setshowPass(!showpass)}>
               {!showpass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
             </span>
           </label>
-          <input type="submit" value="Register" className="btn w-full bg-primary text-white hover:bg-transparent hover:border-primary hover:text-primary" />
-
+          <input
+            type="submit"
+            value="Register"
+            className="btn w-full bg-primary text-white hover:bg-transparent hover:border-primary hover:text-primary"
+          />
         </form>
-        <p className="text-darker mt-6 text-center">Already Have An Account? <Link to='/login' className="link font-bold">Log in</Link></p>
+        <p className="text-darker mt-6 text-center">
+          Already Have An Account?{" "}
+          <Link to="/login" className="link font-bold">
+            Log in
+          </Link>
+        </p>
       </div>
     </div>
   );

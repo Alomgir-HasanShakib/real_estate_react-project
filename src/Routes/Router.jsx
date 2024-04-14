@@ -6,6 +6,8 @@ import Contact from "../Pages/Contact";
 import ProfileUpdate from "../Pages/ProfileUpdate";
 import Registration from "../Components/Registration";
 import Login from "../Components/Login";
+import Pricing from "../Pages/Pricing";
+import UserProfile from "../Pages/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/pricing",
+        element: <Pricing></Pricing>,
+      },
+      {
+        path: "/user-profile",
+        element: <UserProfile></UserProfile>,
       },
     ],
   },

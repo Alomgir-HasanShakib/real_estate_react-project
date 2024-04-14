@@ -6,3 +6,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.bg-img {
+  background: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ihg.com%2Fhotels%2Fus%2Fen%2Freservation&psig=AOvVaw3tv7o3e1kW6Yyoszb0n4j8&ust=1713109263879000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwjC2qy6w7-FAxW9Z2wGHRBmD0wQjRx6BAgAEBY);
+}
