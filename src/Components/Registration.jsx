@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/Authentication/Authentication";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import SocialLogin from "./SocialLogin";
+// for weet alert
+import toast, { Toaster } from "react-hot-toast";
 
 const Registration = () => {
   const [showpass, setshowPass] = useState(true);
@@ -16,15 +18,19 @@ const Registration = () => {
 
   // context for authentication
   const { createUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSignUp = (data) => {
-    const { email, password } = data;
+    const { email, password, username } = data;
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        result.user.displayName = username;
+        toast.success("Successfully Register!");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        console.error(error);
+        toast.error("Registration Error!");
       });
   };
 
@@ -126,6 +132,7 @@ const Registration = () => {
         </p>
         <SocialLogin></SocialLogin>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };

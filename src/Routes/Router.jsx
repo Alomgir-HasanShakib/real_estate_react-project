@@ -8,6 +8,8 @@ import Registration from "../Components/Registration";
 import Login from "../Components/Login";
 import Pricing from "../Pages/Pricing";
 import UserProfile from "../Pages/UserProfile";
+import PropertyDetails from "../Pages/PropertyDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,15 @@ const router = createBrowserRouter([
       {
         path: "/user-profile",
         element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "/propertyDetails/:id",
+        element: (
+          <PrivateRoute>
+            <PropertyDetails></PropertyDetails>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/data.json"),
       },
     ],
   },

@@ -15,7 +15,7 @@ const Propertys = () => {
       <h2 className="text-4xl font-bold text-primary text-center">
         Our Services
       </h2>
-      <div className="grid md:grid-cols-3 grid-cols-1 md:gap-4 gap-2 mt-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 md:gap-4 gap-2 mt-16">
         {propertys.map((property, idx) => (
           <Property key={idx} property={property}></Property>
         ))}

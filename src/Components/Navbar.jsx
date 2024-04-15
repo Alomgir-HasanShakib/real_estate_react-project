@@ -3,9 +3,18 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Contexts/Authentication/Authentication";
 import Logo from "../assets/logo.png";
 
-const Navbar = () => {
-  const { user, logOut, loader } = useContext(AuthContext);
+import toast, { Toaster } from "react-hot-toast";
 
+const Navbar = () => {
+  // authentication context import here
+
+  const { user, logOut } = useContext(AuthContext);
+
+  // log out functionality here
+  const handleLogout = () => {
+    logOut().then(() => toast.success("Log out successfull "));
+  };
+  // navigation links here
   const navLink = (
     <>
       <li className="text-[18px] font-semibold">
@@ -110,13 +119,6 @@ const Navbar = () => {
       )}
     </>
   );
-  if (loader) {
-    return (
-      <div className="flex justify-center">
-        <span className="loading  loading-spinner loading-lg"></span>
-      </div>
-    );
-  }
 
   return (
     <div className="navbar bg-base-100">
@@ -143,10 +145,17 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navLink}
+            {user && (
+              <button onClick={handleLogout}>
+                <a className="btn bg-darker text-white font-bold hover:bg-transparent hover:border-[#135D66] hover:text-[#135D66] px-8">
+                  Log out
+                </a>
+              </button>
+            )}
           </ul>
         </div>
         <a className="font-bold text-2x">
-          <img className ='w-[150px]' src={Logo} alt="" />
+          <img className="w-[150px]" src={Logo} alt="" />
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -154,12 +163,21 @@ const Navbar = () => {
       </div>
       {user ? (
         <div className="navbar-end">
-          <div className="avatar mr-4">
-            <div className="w-12 rounded-full">
-              <img src={user.photoURL} />
+          <div className="avatar mr-4 tooltip" data-tip={`${user.displayName}`}>
+            <div className="w-12 rounded-full tooltip">
+              <button>
+                {" "}
+                <img
+                  src={
+                    user.photoURL
+                      ? user.photoURL
+                      : "https://i.postimg.cc/GpQkRJ9S/950-9501315-katie-notopoulos-katienotopoulos-i-write-about-tech-user.jpg"
+                  }
+                />
+              </button>
             </div>
           </div>
-          <button onClick={logOut}>
+          <button onClick={handleLogout} className="md:flex hidden">
             <a className="btn bg-darker text-white font-bold hover:bg-transparent hover:border-[#135D66] hover:text-[#135D66] px-8">
               Log out
             </a>
@@ -174,6 +192,7 @@ const Navbar = () => {
           </Link>
         </div>
       )}
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Contexts/Authentication/Authentication";
+import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
@@ -17,11 +18,19 @@ const Login = () => {
   // context for authentication
   const { loginUser } = useContext(AuthContext);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleLogin = (data) => {
     const { email, password } = data;
     loginUser(email, password)
-      .then((result) => console.log(result.user))
-      .catch((err) => console.error(err));
+      .then((result) => {
+        toast.success("Successfully Login!");
+
+        // navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => toast.error("Login Error"));
   };
 
   return (
@@ -93,6 +102,7 @@ const Login = () => {
         </Link>
       </p>
       <SocialLogin></SocialLogin>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
