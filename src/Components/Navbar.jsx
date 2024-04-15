@@ -8,7 +8,11 @@ import toast, { Toaster } from "react-hot-toast";
 const Navbar = () => {
   // authentication context import here
 
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loader } = useContext(AuthContext);
+
+  if (loader) {
+    return <div className="flex justify-center"><span className="loading loading-spinner loading-lg"></span></div>;
+  }
 
   // log out functionality here
   const handleLogout = () => {

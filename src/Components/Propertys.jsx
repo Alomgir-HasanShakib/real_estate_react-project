@@ -9,7 +9,6 @@ const Propertys = () => {
       .then((res) => res.json())
       .then((data) => setPropertys(data));
   }, []);
-  console.log(propertys);
   return (
     <div className="mt-16">
       <h2 className="text-4xl font-bold text-primary text-center">

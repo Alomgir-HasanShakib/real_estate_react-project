@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="mt-16">
       <Helmet>
-        <title>Home</title>
+        <title>Your Homies | Home</title>
       </Helmet>
       <Swiper
         modules={[Navigation]}

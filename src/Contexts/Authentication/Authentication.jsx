@@ -7,6 +7,7 @@ import {
   signOut,
   GoogleAuthProvider,
   GithubAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import app from "../../Firebase/Firebase.config";
@@ -21,7 +22,6 @@ const Authentication = ({ children }) => {
   const [loader, setLoader] = useState(true);
   // manage user
   const [user, setUser] = useState(null);
-  console.log(user);
 
   // create user
   const createUser = (email, pass) => {
@@ -34,10 +34,12 @@ const Authentication = ({ children }) => {
     setLoader(true);
     return signInWithEmailAndPassword(auth, email, pass);
   };
+  // googleLogin
   const googleLogin = () => {
     setLoader(true);
     return signInWithPopup(auth, googleprovider);
   };
+  // gitLogin
   const gitLogin = () => {
     setLoader(true);
     return signInWithPopup(auth, githubprovider);
@@ -50,11 +52,21 @@ const Authentication = ({ children }) => {
     return signOut(auth);
   };
 
+  // update profile
+
+  const updateUserProfile = (name, photourl) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photourl,
+    });
+  };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoader(false);
     });
+
     return () => unSubscribe();
   }, []);
 
@@ -66,6 +78,7 @@ const Authentication = ({ children }) => {
     logOut,
     googleLogin,
     gitLogin,
+    updateUserProfile,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

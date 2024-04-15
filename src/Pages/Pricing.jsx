@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 const Pricing = () => {
   return (
     <div>
-      <Helmet><title>Pricing</title></Helmet>
+      <Helmet><title>Your Homies | Pricing</title></Helmet>
     </div>
   )
 }

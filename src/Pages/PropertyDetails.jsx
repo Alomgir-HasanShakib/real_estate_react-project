@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaPhone, FaLink } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const PropertyDetails = () => {
   const data = useLoaderData();
@@ -20,6 +21,9 @@ const PropertyDetails = () => {
   } = propertys;
   return (
     <div>
+      <Helmet>
+        <title>Your Homies | Property Details</title>
+      </Helmet>
       <div className="banner bg-lighten mt-16 py-10 lg:py-24 text-center">
         <h2 className="text-2xl md:text-4xl font-medium text-primary m-3">
           Property Details of <br />{" "}
