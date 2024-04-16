@@ -10,7 +10,7 @@ const ProfileUpdate = () => {
     formState: { errors },
   } = useForm();
 
-  const { updateUserProfile } = useContext(AuthContext);
+  const { updateUserProfile} = useContext(AuthContext);
 
   const handleUpdate = (data) => {
     const { name, photourl } = data;
@@ -35,7 +35,7 @@ const ProfileUpdate = () => {
             <input
               type="text"
               className="grow"
-              placeholder="Photo Url"
+              placeholder= "Photo Url"
               {...register("photourl")}
             />
           </label>

@@ -11,7 +11,11 @@ const Navbar = () => {
   const { user, logOut, loader } = useContext(AuthContext);
 
   if (loader) {
-    return <div className="flex justify-center"><span className="loading loading-spinner loading-lg"></span></div>;
+    return (
+      <div className="flex justify-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
   }
 
   // log out functionality here
@@ -53,22 +57,7 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
-      <li className="text-[18px] font-semibold">
-        <NavLink
-          to="/pricing"
-          style={({ isActive, isPending, isTransitioning }) => {
-            return {
-              fontWeight: isActive ? "bold" : "",
-              color: isActive ? "#135D66" : "black",
-              background: isActive ? "transparent" : "",
-              borderBottom: isActive ? "1px solid #135D66" : "",
-              viewTransitionName: isTransitioning ? "slide" : "",
-            };
-          }}
-        >
-          Pricing
-        </NavLink>
-      </li>
+
       <li className="text-[18px] font-semibold">
         <NavLink
           to="/contact"
