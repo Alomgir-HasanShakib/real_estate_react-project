@@ -14,8 +14,8 @@ const Estate = ({ property }) => {
       className="card card-compact max-w-96 bg-base-100 shadow-xl m-4"
       data-aos="fade-right"
     >
-      <figure>
-        <img className="md:h-60" src={image} alt="Shoes" />
+      <figure className="p-5">
+        <img className="md:h-60 rounded-tr-[50px] rounded-bl-3xl" src={image} alt="Shoes" />
       </figure>
       <div className="card-body" >
         <h2 className="text-3xl font-semibold text-darker">{name}</h2>

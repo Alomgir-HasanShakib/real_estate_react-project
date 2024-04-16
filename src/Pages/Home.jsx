@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Helmet } from "react-helmet-async";
 import Propertys from "../Components/Propertys";
+import Testomonial from "../Components/Testomonial";
 const Home = () => {
   return (
     <div className="mt-16">
@@ -74,6 +75,9 @@ const Home = () => {
       </Swiper>
       <div>
         <Propertys></Propertys>
+      </div>
+      <div className="mt-16">
+        <Testomonial></Testomonial>
       </div>
     </div>
   );

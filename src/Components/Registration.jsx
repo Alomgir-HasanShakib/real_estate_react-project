@@ -23,15 +23,24 @@ const Registration = () => {
 
   const handleSignUp = (data) => {
     const { email, password, username } = data;
-    createUser(email, password)
-      .then((result) => {
-        result.user.displayName = username;
-        toast.success("Successfully Register!");
-        navigate(location?.state ? location.state : "/");
-      })
-      .catch((error) => {
-        toast.error("Registration Error!");
-      });
+    if(password.length < 6){
+      return toast.error("Password length must be 6 character")
+    }
+    if (/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
+      return createUser(email, password)
+        .then((result) => {
+          result.user.displayName = username;
+          toast.success("Successfully Register!");
+          navigate(location?.state ? location.state : "/");
+        })
+        .catch((error) => {
+          toast.error("Registration Error!");
+        });
+    } else {
+      return toast.error(
+        "Password should have atleast one uppercase and lowercase character"
+      );
+    }
   };
 
   return (
