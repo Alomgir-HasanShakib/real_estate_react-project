@@ -33,7 +33,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/propertyBook",
-        element: <Booking></Booking>,
+        element: (
+          <PrivateRoute>
+            <Booking></Booking>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/profile-up",
@@ -50,7 +54,11 @@ const router = createBrowserRouter([
 
       {
         path: "/user-profile",
-        element: <UserProfile></UserProfile>,
+        element: (
+          <PrivateRoute>
+            <UserProfile></UserProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/propertyDetails/:id",
