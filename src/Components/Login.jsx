@@ -23,8 +23,8 @@ const Login = () => {
 
   const handleLogin = (data) => {
     const { email, password } = data;
-    if(password.length < 6){
-      return toast.error("Password length must be 6 character")
+    if (password.length < 6) {
+      return toast.error("Password length must be 6 character");
     }
     if (/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
       return loginUser(email, password)

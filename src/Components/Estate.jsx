@@ -40,8 +40,7 @@ const Estate = ({ property }) => {
               View Details
             </button>
           </Link>
-          <Link to="/booking">
-            {" "}
+          <Link to="/propertyBook">
             <button className="btn bg-transparent hover:text-lighten hover:bg-primary border-primary text-primary">
               Booking
             </button>

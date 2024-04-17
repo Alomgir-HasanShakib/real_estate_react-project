@@ -10,11 +10,14 @@ import Login from "../Components/Login";
 import UserProfile from "../Pages/UserProfile";
 import PropertyDetails from "../Pages/PropertyDetails";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage";
+import Booking from "../Pages/Booking";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -27,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/propertyBook",
+        element: <Booking></Booking>,
       },
       {
         path: "/profile-up",

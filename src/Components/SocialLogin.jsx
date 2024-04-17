@@ -51,9 +51,6 @@ const SocialLogin = () => {
         >
           <FaGithub></FaGithub>
         </button>
-        <button className="btn bg-primary text-lighten px-5 text-xl">
-          <FaFacebook></FaFacebook>
-        </button>
       </div>
       <Toaster position="top-center" reverseOrder={false} />
     </div>

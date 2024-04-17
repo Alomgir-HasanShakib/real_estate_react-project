@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaPhone, FaLink } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
@@ -51,10 +51,17 @@ const PropertyDetails = () => {
           <p className=" text-[18px] md:text-xl font-semibold text-primary">
             Type : {type}
           </p>
-          <p className="text-[18px] md:text-xl font-semibol divider ">Facilities</p>
+          <p className="text-[18px] md:text-xl font-semibol divider ">
+            Facilities
+          </p>
           <ul className="px-4">
             {amenities.map((amenitie, idx) => (
-              <li className="list-disc text-[18px] md:text-xl font-semibol text-green-600" key={idx}>{amenitie}</li>
+              <li
+                className="list-disc text-[18px] md:text-xl font-semibol text-green-600"
+                key={idx}
+              >
+                {amenitie}
+              </li>
             ))}
           </ul>
           <div className="space-y-3">
@@ -72,9 +79,12 @@ const PropertyDetails = () => {
               <FaLink className="text-sm md:text-xl" text-sm></FaLink>{" "}
               {contact.website}
             </p>
-            <button className="btn bg-primary text-lighten font-medium text-xl hover:border-primary hover:text-primary hover:bg-transparent w-full ">
-              Book Now
-            </button>
+            <Link to="/propertyBook">
+              {" "}
+              <button className="btn bg-primary text-lighten font-medium text-xl hover:border-primary hover:text-primary hover:bg-transparent w-full ">
+                Book Now
+              </button>
+            </Link>
           </div>
         </div>
         <div className="right w-full lg:w-[50%] flex-col-reverse lg:items-center">

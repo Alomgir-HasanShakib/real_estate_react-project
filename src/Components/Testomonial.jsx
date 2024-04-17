@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-import { EffectCoverflow, Pagination, FreeMode } from "swiper/modules";
+import { Pagination, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
