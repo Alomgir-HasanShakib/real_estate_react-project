@@ -23,6 +23,24 @@ const Login = () => {
 
   const handleLogin = (data) => {
     const { email, password } = data;
+    if(password.length < 6){
+      return toast.error("Password length must be 6 character")
+    }
+    if (/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
+      return loginUser(email, password)
+        .then((result) => {
+          result.user.displayName = username;
+          toast.success("Successfully Login!");
+          navigate(location?.state ? location.state : "/");
+        })
+        .catch((error) => {
+          toast.error("Login Error!");
+        });
+    } else {
+      return toast.error(
+        "Password should have atleast one uppercase and lowercase character"
+      );
+    }
     loginUser(email, password)
       .then((result) => {
         toast.success("Successfully Login!");

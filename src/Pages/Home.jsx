@@ -30,45 +30,237 @@ const Home = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <div className="relative md:h-[70vh]">
-            <img className="w-full" src={banner1} alt="" />
-            <div className="absolute bottom-[50%] right-[10%]">
-              <h2 className="md:text-5xl font-bold text-primary p-2 rounded-sm bg-lighten">
-                The Best Resort Services{" "}
-              </h2>
+          <div className="relative h-[70vh]">
+            <img className="w-full  h-full" src={banner1} alt="" />
+            <div className="absolute bottom-[10%] left-[20%] bg-white p-5 rounded-lg flex flex-col lg:flex-row gap-3">
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Select Type
+                </option>
+                <option>Hotel</option>
+                <option>Motel</option>
+                <option>Resort</option>
+                <option>Vacation Rental</option>
+                <option>Lodge</option>
+                <option>Guesthouse</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  From
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  To
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Total Room
+                </option>
+                <option>1</option>
+                <option>2</option>
+                <option>2-5</option>
+                <option>5-8</option>
+                <option>8-10</option>
+              </select>
+              <input
+                type="submit"
+                value="Book Now"
+                className="btn bg-primary text-lighten hover:bg-transparent hover:text-primary hover:border-primary"
+              />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <div className="md:h-[70vh] relative">
-            <img className="w-full" src={banner5} alt="" />
-            <div className="absolute bottom-[50%] right-[10%]">
-              <h2 className="md:text-5xl font-bold text-primary p-2 rounded-sm bg-lighten">
-                Best Netural View{" "}
-              </h2>
+          <div className="h-[70vh] relative">
+            <img className="w-full  h-full" src={banner5} alt="" />
+            <div className="absolute bottom-[10%] left-[20%] bg-white p-5 rounded-lg flex flex-col lg:flex-row gap-3">
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Select Type
+                </option>
+                <option>Hotel</option>
+                <option>Motel</option>
+                <option>Resort</option>
+                <option>Vacation Rental</option>
+                <option>Lodge</option>
+                <option>Guesthouse</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  From
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  To
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Total Room
+                </option>
+                <option>1</option>
+                <option>2</option>
+                <option>2-5</option>
+                <option>5-8</option>
+                <option>8-10</option>
+              </select>
+              <input
+                type="submit"
+                value="Book Now"
+                className="btn bg-primary text-lighten hover:bg-transparent hover:text-primary hover:border-primary"
+              />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <div className="md:h-[70vh] relative">
-            <img className="w-full" src={banner3} alt="" />
-            <div className="absolute bottom-[50%] right-[10%]">
-              <h2 className="md:text-5xl font-bold text-primary p-2 rounded-sm bg-lighten">
-                On OF The Best Hotel Services{" "}
-              </h2>
+          <div className="h-[70vh] relative">
+            <img className="w-full h-full" src={banner3} alt="" />
+            <div className="absolute bottom-[10%] left-[20%] bg-white p-5 rounded-lg flex flex-col lg:flex-row gap-3">
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Select Type
+                </option>
+                <option>Hotel</option>
+                <option>Motel</option>
+                <option>Resort</option>
+                <option>Vacation Rental</option>
+                <option>Lodge</option>
+                <option>Guesthouse</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  From
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  To
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Total Room
+                </option>
+                <option>1</option>
+                <option>2</option>
+                <option>2-5</option>
+                <option>5-8</option>
+                <option>8-10</option>
+              </select>
+              <input
+                type="submit"
+                value="Book Now"
+                className="btn bg-primary text-lighten hover:bg-transparent hover:text-primary hover:border-primary"
+              />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <div className="md:h-[70vh] relative">
-            <img className="w-full" src={banner4} alt="" />
-            <div className="absolute bottom-[50%] right-[10%]">
-              <h2 className="md:text-5xl font-bold text-primary p-2 rounded-sm bg-lighten">
-                World Best Room Services{" "}
-              </h2>
+          <div className="h-[70vh] relative">
+            <img className="w-full h-full" src={banner4} alt="" />
+            <div className="absolute bottom-[10%] left-[20%] bg-white p-5 rounded-lg flex flex-col lg:flex-row gap-3">
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Select Type
+                </option>
+                <option>Hotel</option>
+                <option>Motel</option>
+                <option>Resort</option>
+                <option>Vacation Rental</option>
+                <option>Lodge</option>
+                <option>Guesthouse</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  From
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  To
+                </option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+              </select>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Total Room
+                </option>
+                <option>1</option>
+                <option>2</option>
+                <option>2-5</option>
+                <option>5-8</option>
+                <option>8-10</option>
+              </select>
+              <input
+                type="submit"
+                value="Book Now"
+                className="btn bg-primary text-lighten hover:bg-transparent hover:text-primary hover:border-primary"
+              />
             </div>
           </div>
         </SwiperSlide>
