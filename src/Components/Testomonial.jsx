@@ -15,9 +15,8 @@ const Testomonial = () => {
       </h2>
       <Swiper
         modules={[FreeMode, Pagination]}
-        effect={"coverflow"}
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={1}
         freeMode={true}
         pagination={true}
       >
