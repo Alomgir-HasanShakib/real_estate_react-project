@@ -9,4 +9,12 @@
 - 
 ### Whether you're in the market to buy or simply exploring options, Your Homies provides a comprehensive, user-centric platform for all your real estate needs.
 
+
+### If you want to run this project locally so you need to follow those step.
+- clone this project then open your code editor and then type this line in your terminal
+  ```node
+  git clone git@github.com:Alomgir-HasanShakib/real_estate_react-project.git
+  npm install
+  npm run dev
+
 <h3>Live Link - https://real-estate-projects-b8839.firebaseapp.com/</h3> 
